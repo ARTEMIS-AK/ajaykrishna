@@ -78,7 +78,7 @@ export default function Nav() {
                     className="group flex items-center gap-2 whitespace-nowrap select-none"
                 >
                     <span className="font-mono text-xs text-[#FF5A1F] tracking-widest">[ AK ]</span>
-                    <span className="font-display font-medium text-[10px] sm:text-xs md:text-sm tracking-[0.12em] sm:tracking-[0.25em] text-[#F5F5F0] group-hover:text-[#FF5A1F] transition-colors duration-300">
+                    <span className="font-display font-medium text-xs md:text-sm tracking-[0.25em] text-[#F5F5F0] group-hover:text-[#FF5A1F] transition-colors duration-300 hidden sm:inline">
                         AJAY KRISHNA
                     </span>
                 </a>

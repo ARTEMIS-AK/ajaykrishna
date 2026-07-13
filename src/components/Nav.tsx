@@ -106,17 +106,28 @@ export default function Nav() {
                 </div>
 
                 {/* WORK/CONTACT CTA */}
-                <a
-                    href="#contact"
-                    onClick={(e) => scrollToSection(e, "contact")}
-                    className={`flex items-center gap-1 text-[11px] font-mono tracking-widest py-2 px-4 rounded border transition-all duration-300 ${activeSection === "contact"
-                        ? "bg-[#FF5A1F] text-black border-[#FF5A1F]"
-                        : "border-[#F5F5F0]/25 text-[#F5F5F0] hover:border-[#FF5A1F] hover:text-[#FF5A1F]"
-                        }`}
-                >
-                    CONTACT
-                    <ArrowUpRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                <div className="flex items-center gap-3">
+                    <a
+                        href="https://drive.google.com/file/d/1kiAtR4cYtRw-4tWOt_itmRrJq6IPVvUZ/view"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-[11px] font-mono tracking-widest py-2 px-4 rounded border border-[#F5F5F0]/25 text-[#F5F5F0] hover:border-[#FF5A1F] hover:text-[#FF5A1F] transition-all duration-300"
+                    >
+                        RESUME
+                        <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                    <a
+                        href="#contact"
+                        onClick={(e) => scrollToSection(e, "contact")}
+                        className={`flex items-center gap-1 text-[11px] font-mono tracking-widest py-2 px-4 rounded border transition-all duration-300 ${activeSection === "contact"
+                            ? "bg-[#FF5A1F] text-black border-[#FF5A1F]"
+                            : "border-[#F5F5F0]/25 text-[#F5F5F0] hover:border-[#FF5A1F] hover:text-[#FF5A1F]"
+                            }`}
+                    >
+                        CONTACT
+                        <ArrowUpRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                </div>
             </div>
         </nav>
     );

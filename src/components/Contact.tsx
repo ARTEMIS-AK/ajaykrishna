@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { content } from "@/content/content";
-import { Copy, Check, Mail, Phone } from "lucide-react";
+import { Copy, Check, Mail, Phone, ArrowUpRight } from "lucide-react";
 
 export default function Contact() {
     const [copiedText, setCopiedText] = useState("");
@@ -46,80 +46,99 @@ export default function Contact() {
             id="contact"
             className="relative min-h-[90vh] w-full bg-[#0A0A0A] text-[#F5F5F0] pt-24 pb-12 overflow-hidden border-t border-white/5 flex flex-col justify-between"
         >
-            <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1 flex flex-col justify-center">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex-1 flex flex-col lg:flex-row lg:items-center justify-between gap-12 py-12">
+                <div className="max-w-xl w-full">
+                    {/* Confident big header */}
+                    <div className="mb-16">
+                        <span className="font-mono text-xs text-[#FF5A1F] tracking-widest uppercase block mb-3">
+                            [ INITIATE ]
+                        </span>
+                        <h2 className="font-display font-bold text-4xl sm:text-6xl md:text-8xl tracking-tight leading-none uppercase">
+                            LET'S BUILD <br />
+                            <span className="text-[#FF5A1F]">SOMETHING.</span>
+                        </h2>
+                    </div>
 
-                {/* Confident big header */}
-                <div className="mb-16">
-                    <span className="font-mono text-xs text-[#FF5A1F] tracking-widest uppercase block mb-3">
-                        [ INITIATE ]
-                    </span>
-                    <h2 className="font-display font-bold text-4xl sm:text-6xl md:text-8xl tracking-tight leading-none uppercase">
-                        LET'S BUILD <br />
-                        <span className="text-[#FF5A1F]">SOMETHING.</span>
-                    </h2>
+                    {/* Contact links list */}
+                    <div className="flex flex-col gap-0.5 mt-8">
+                        {contactLinks.map((link) => (
+                            <div
+                                key={link.label}
+                                className="group relative border-y border-white/5 hover:border-white/10 transition-colors duration-300 py-6 md:py-8 flex items-center justify-between gap-6"
+                            >
+                                <a
+                                    href={link.href}
+                                    target={link.type === "linkedin" ? "_blank" : undefined}
+                                    rel={link.type === "linkedin" ? "noopener noreferrer" : undefined}
+                                    className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 flex-1 outline-none decoration-transparent"
+                                >
+                                    {/* Eyebrow Label */}
+                                    <div className="font-mono text-[10px] tracking-widest text-[#F5F5F0]/30 min-w-[100px] flex items-center gap-2">
+                                        {link.icon}
+                                        <span>{link.label}</span>
+                                    </div>
+
+                                    {/* Actual value */}
+                                    <span className="font-display text-lg sm:text-xl md:text-3xl font-medium tracking-tight text-[#F5F5F0] group-hover:text-white transition-colors duration-300 relative inline-block">
+                                        {link.value}
+
+                                        {/* Drawing SVG Underline */}
+                                        <svg
+                                            className="absolute -bottom-1 left-0 w-full h-[1.5px] pointer-events-none"
+                                            viewBox="0 0 100 2"
+                                            preserveAspectRatio="none"
+                                        >
+                                            <line
+                                                x1="0"
+                                                y1="1"
+                                                x2="100"
+                                                y2="1"
+                                                stroke="#FF5A1F"
+                                                strokeWidth="2"
+                                                strokeDasharray="100"
+                                                strokeDashoffset="100"
+                                                className="transition-all duration-500 ease-out group-hover:stroke-dashoffset-0"
+                                                style={{
+                                                    strokeDashoffset: "var(--stroke-offset, 100)",
+                                                }}
+                                            />
+                                        </svg>
+                                    </span>
+                                </a>
+
+                                {/* Copy shortcut */}
+                                <button
+                                    onClick={() => handleCopy(link.value, link.type)}
+                                    className="p-3 rounded-lg border border-white/5 hover:border-[#FF5A1F]/30 hover:bg-[#FF5A1F]/5 text-[#F5F5F0]/40 hover:text-[#FF5A1F] transition-all duration-300 z-10"
+                                    title={`Copy ${link.label}`}
+                                >
+                                    {copiedText === link.type ? (
+                                        <Check className="w-4 h-4 text-emerald-400" />
+                                    ) : (
+                                        <Copy className="w-4 h-4" />
+                                    )}
+                                </button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                {/* Contact links list */}
-                <div className="max-w-3xl flex flex-col gap-0.5 mt-8">
-                    {contactLinks.map((link) => (
-                        <div
-                            key={link.label}
-                            className="group relative border-y border-white/5 hover:border-white/10 transition-colors duration-300 py-6 md:py-8 flex items-center justify-between gap-6"
-                        >
-                            <a
-                                href={link.href}
-                                target={link.type === "linkedin" ? "_blank" : undefined}
-                                rel={link.type === "linkedin" ? "noopener noreferrer" : undefined}
-                                className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8 flex-1 outline-none decoration-transparent"
-                            >
-                                {/* Eyebrow Label */}
-                                <div className="font-mono text-[10px] tracking-widest text-[#F5F5F0]/30 min-w-[100px] flex items-center gap-2">
-                                    {link.icon}
-                                    <span>{link.label}</span>
-                                </div>
-
-                                {/* Actual value */}
-                                <span className="font-display text-lg sm:text-xl md:text-3xl font-medium tracking-tight text-[#F5F5F0] group-hover:text-white transition-colors duration-300 relative inline-block">
-                                    {link.value}
-
-                                    {/* Drawing SVG Underline */}
-                                    <svg
-                                        className="absolute -bottom-1 left-0 w-full h-[1.5px] pointer-events-none"
-                                        viewBox="0 0 100 2"
-                                        preserveAspectRatio="none"
-                                    >
-                                        <line
-                                            x1="0"
-                                            y1="1"
-                                            x2="100"
-                                            y2="1"
-                                            stroke="#FF5A1F"
-                                            strokeWidth="2"
-                                            strokeDasharray="100"
-                                            strokeDashoffset="100"
-                                            className="transition-all duration-500 ease-out group-hover:stroke-dashoffset-0"
-                                            style={{
-                                                strokeDashoffset: "var(--stroke-offset, 100)",
-                                            }}
-                                        />
-                                    </svg>
-                                </span>
-                            </a>
-
-                            {/* Copy shortcut */}
-                            <button
-                                onClick={() => handleCopy(link.value, link.type)}
-                                className="p-3 rounded-lg border border-white/5 hover:border-[#FF5A1F]/30 hover:bg-[#FF5A1F]/5 text-[#F5F5F0]/40 hover:text-[#FF5A1F] transition-all duration-300 z-10"
-                                title={`Copy ${link.label}`}
-                            >
-                                {copiedText === link.type ? (
-                                    <Check className="w-4 h-4 text-emerald-400" />
-                                ) : (
-                                    <Copy className="w-4 h-4" />
-                                )}
-                            </button>
-                        </div>
-                    ))}
+                {/* Resume block */}
+                <div className="flex flex-col justify-center p-8 md:p-10 bg-[#121212] border border-white/5 hover:border-[#FF5A1F]/30 rounded-2xl transition-all duration-300 group w-full lg:max-w-md relative overflow-hidden">
+                    <span className="font-mono text-[10px] tracking-widest text-[#FF5A1F] uppercase block mb-2">[ GENERALIST OPERATOR ]</span>
+                    <h3 className="font-display font-semibold text-2xl md:text-3xl text-[#F5F5F0] mb-4">CURRICULUM VITAE</h3>
+                    <p className="text-xs text-[#F5F5F0]/50 mb-8 leading-relaxed font-light">
+                        Review the complete trace of my work: design prototypes, product requirements, growth stats, and technical execution.
+                    </p>
+                    <a
+                        href="https://drive.google.com/file/d/1kiAtR4cYtRw-4tWOt_itmRrJq6IPVvUZ/view"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-between w-full bg-[#FF5A1F] hover:bg-[#FF5A1F]/90 text-black font-mono text-xs tracking-wider font-semibold py-4 px-6 rounded transition-all duration-300"
+                    >
+                        <span>VIEW RESUME</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                    </a>
                 </div>
             </div>
 

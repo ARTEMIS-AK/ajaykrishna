@@ -54,7 +54,7 @@ export default function Contact() {
                             [ INITIATE ]
                         </span>
                         <h2 className="font-display font-bold text-4xl sm:text-6xl md:text-8xl tracking-tight leading-none uppercase">
-                            LET'S BUILD <br />
+                            {"LET'S BUILD"} <br />
                             <span className="text-[#FF5A1F]">SOMETHING.</span>
                         </h2>
                     </div>

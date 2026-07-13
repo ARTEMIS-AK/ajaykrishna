@@ -72,14 +72,13 @@ export default function Nav() {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-                {/* LOGO */}
                 <a
                     href="#hero"
                     onClick={(e) => scrollToSection(e, "hero")}
-                    className="group flex items-center gap-3"
+                    className="group flex items-center gap-2 whitespace-nowrap select-none"
                 >
                     <span className="font-mono text-xs text-[#FF5A1F] tracking-widest">[ AK ]</span>
-                    <span className="font-display font-medium text-xs md:text-sm tracking-[0.25em] text-[#F5F5F0] group-hover:text-[#FF5A1F] transition-colors duration-300">
+                    <span className="font-display font-medium text-[10px] sm:text-xs md:text-sm tracking-[0.12em] sm:tracking-[0.25em] text-[#F5F5F0] group-hover:text-[#FF5A1F] transition-colors duration-300">
                         AJAY KRISHNA
                     </span>
                 </a>

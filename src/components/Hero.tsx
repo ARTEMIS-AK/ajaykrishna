@@ -167,10 +167,7 @@ export default function Hero() {
             {/* Background patterns */}
             <HeroInteractiveBackground />
 
-            {/* Floating Section Index Indicator */}
-            <div className="absolute top-28 right-6 md:right-12 font-mono text-[10px] tracking-widest text-[#F5F5F0]/30 select-none">
-                [ 00 / 04 ]
-            </div>
+
 
             {/* Main content grid */}
             <div className="flex-1 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center pt-24 pb-12 relative z-10">

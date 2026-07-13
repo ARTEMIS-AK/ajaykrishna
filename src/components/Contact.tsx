@@ -143,7 +143,7 @@ export default function Contact() {
             </div>
 
             {/* Footer credits */}
-            <div className="max-w-7xl w-full mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 font-mono text-[10px] text-[#F5F5F0]/40 tracking-widest uppercase">
+            <div className="max-w-7xl w-full mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 font-mono text-[10px] text-[#F5F5F0]/40 tracking-widest uppercase text-center">
                 <div>
                     DESIGNED & BUILD BY {content.personal.name}
                 </div>
